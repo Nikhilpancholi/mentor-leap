@@ -3,274 +3,315 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 
 const services = [
   {
-    title: '1:1 Executive Coaching for Professionals',
-    subtitle: 'Executive Coaching',
+    index: '01',
+    title: 'Executive Coaching',
+    headline: 'Coaching that builds leaders who move rooms',
     description:
-      'Personalized executive coaching designed to elevate decision-making clarity and influence.',
+      'Personalized 1:1 coaching designed to sharpen decision-making, elevate presence, and fast-track your path to the top.',
     points: [
-      'Leadership presence',
+      'Leadership presence & gravitas',
       'Strategic communication',
       'Boardroom confidence',
-      'Career advancement',
       'Personal brand positioning',
-      'Group leadership coaching for emerging leaders, mid-level managers, and high-performing teams',
-      'Corporate leadership training programs for confident organizational communication',
     ],
-    cta: 'Explore Executive Coaching',
+    cta: 'Start Coaching',
+    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85&fit=crop',
+    badge: '3x leadership impact',
+    palette: {
+      bg: '#E8F0FF',
+      accent: '#2D52C8',
+      tag: '#C4D6FF',
+      tagText: '#1A35A0',
+      border: 'rgba(45,82,200,0.22)',
+      num: 'rgba(45,82,200,0.08)',
+    },
   },
   {
-    title: 'Live Events & Leadership Bootcamps',
-    subtitle: 'Events',
+    index: '02',
+    title: 'Live Events & Bootcamps',
+    headline: 'Workshops that drive stronger engagement',
     description:
-      'Join high-impact online and in-person experiences built for practical communication mastery.',
+      'High-impact in-person and online experiences built for practical communication mastery and real-world results.',
     points: [
       'Public speaking mastery',
-      'Executive presence',
       'Persuasive communication',
       'Storytelling for leaders',
       'Media readiness training',
-      'Online and in-person leadership workshops',
     ],
     cta: 'View Upcoming Events',
+    img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85&fit=crop',
+    badge: 'High-impact cohort format',
+    palette: {
+      bg: '#E8F9F2',
+      accent: '#177A55',
+      tag: '#B8EDD6',
+      tagText: '#0E5239',
+      border: 'rgba(23,122,85,0.22)',
+      num: 'rgba(23,122,85,0.08)',
+    },
   },
   {
-    title: 'Resource Library - Online Leadership Courses',
-    subtitle: 'Courses',
+    index: '03',
+    title: 'Online Courses',
+    headline: 'Self-paced programs that open closed doors',
     description:
-      'Access premium digital programs through a secure login, including lifetime access options.',
+      'Premium digital programs with lifetime access. Learn executive presence and communication mastery at your pace.',
     points: [
-      'Online Public Speaking Course',
-      'Executive Presence Training',
-      'Communication Skills Mastery',
-      'Leadership Communication Course',
-      'Professional Growth Toolkits',
-      'Digital Workbooks & Templates',
+      'Online public speaking course',
+      'Executive presence training',
+      'Communication skills mastery',
+      'Digital workbooks & templates',
     ],
-    cta: 'Explore Courses',
+    cta: 'Browse Courses',
+    img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=85&fit=crop',
+    badge: 'Lifetime access',
+    palette: {
+      bg: '#F2EEFF',
+      accent: '#6030C0',
+      tag: '#E0D0FF',
+      tagText: '#3E1E88',
+      border: 'rgba(96,48,192,0.22)',
+      num: 'rgba(96,48,192,0.08)',
+    },
   },
   {
-    title: 'MentorLeap Studio - Thought Leadership Hub',
-    subtitle: 'Studio',
+    index: '04',
+    title: 'MentorLeap Studio',
+    headline: 'A thought leadership hub in your pocket',
     description:
-      'Discover practical leadership insights through written, video, audio, and short-form learning.',
+      'Discover leadership insights through video, audio, and short-form learning, built for busy professionals.',
     points: [
       'Career growth strategies',
-      'Leadership communication',
-      'Workplace confidence',
       'Executive storytelling',
-      'Personal branding',
-      'YouTube leadership talks and short-form reels',
-      'Communication micro-lessons and podcast snippets',
+      'YouTube leadership talks',
+      'Communication micro-lessons',
     ],
-    cta: 'Visit MentorLeap Studio',
+    cta: 'Visit Studio',
+    img: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=85&fit=crop',
+    badge: 'Learn anywhere',
+    palette: {
+      bg: '#FFF5E8',
+      accent: '#B86818',
+      tag: '#FFE0B0',
+      tagText: '#8A4A08',
+      border: 'rgba(184,104,24,0.22)',
+      num: 'rgba(184,104,24,0.08)',
+    },
   },
   {
-    title: 'Hire Mridu as Anchor & Moderator',
-    subtitle: 'Host & Moderator',
+    index: '05',
+    title: 'Anchor & Moderator',
+    headline: 'Bring 20+ years of media expertise to your stage',
     description:
-      'Bring 20+ years of media expertise to leadership-driven business events and executive forums.',
+      'World-class hosting for corporate townhalls, leadership summits, and award ceremonies that leave a lasting impression.',
     points: [
-      'Corporate townhalls',
+      'Corporate townhalls & forums',
       'Leadership summits',
       'Business conferences',
       'Awards ceremonies',
-      'Panel discussions',
     ],
     cta: 'Submit Event Inquiry',
+    img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=85&fit=crop',
+    badge: '20+ years expertise',
+    palette: {
+      bg: '#FFF0F4',
+      accent: '#B81840',
+      tag: '#FFD0DC',
+      tagText: '#880E2E',
+      border: 'rgba(184,24,64,0.22)',
+      num: 'rgba(184,24,64,0.08)',
+    },
   },
 ]
 
-// Soft, muted pastel tones — each card feels distinct but calm
-const cardTones = [
-  {
-    bg: 'linear-gradient(145deg, #EEF3FB 0%, #F8FAFF 100%)',
-    accent: '#3B6CC7',
-    dot: '#7BAAF7',
-    border: 'rgba(59,108,199,0.18)',
-    tag: '#D6E4FF',
-    tagText: '#2A4F9E',
-  },
-  {
-    bg: 'linear-gradient(145deg, #F0F7F4 0%, #FAFFFE 100%)',
-    accent: '#2A8A6E',
-    dot: '#5EC4A1',
-    border: 'rgba(42,138,110,0.18)',
-    tag: '#CCEEE4',
-    tagText: '#1A6B52',
-  },
-  {
-    bg: 'linear-gradient(145deg, #F5F0FB 0%, #FDFAFF 100%)',
-    accent: '#7048C1',
-    dot: '#A87EE8',
-    border: 'rgba(112,72,193,0.18)',
-    tag: '#E4D8FA',
-    tagText: '#5433A0',
-  },
-  {
-    bg: 'linear-gradient(145deg, #FEF6EC 0%, #FFFDFB 100%)',
-    accent: '#C07828',
-    dot: '#F0AA55',
-    border: 'rgba(192,120,40,0.18)',
-    tag: '#FDEBD0',
-    tagText: '#9A5E18',
-  },
-  {
-    bg: 'linear-gradient(145deg, #FDF0F3 0%, #FFFAFE 100%)',
-    accent: '#C03060',
-    dot: '#E87899',
-    border: 'rgba(192,48,96,0.18)',
-    tag: '#FAD6E2',
-    tagText: '#9A1845',
-  },
-]
+function getRange(index, total) {
+  const step = 1 / total
+  const enter = Math.max(0, index * step - step * 0.25)
+  const activeStart = index * step + step * 0.12
+  const activeEnd = (index + 1) * step - step * 0.12
+  const exit = Math.min(1, (index + 1) * step + step * 0.25)
+  return { enter, activeStart, activeEnd, exit }
+}
 
-function ServiceCard({ item, index, total, progress }) {
-  // Each card occupies an equal slice of scroll progress
-  const sliceSize = 1 / total
+function StickyCard({ service, index, total, progress }) {
+  const { enter, activeStart, activeEnd, exit } = getRange(index, total)
 
-  // Card enters: starts half a slice before its turn
-  // Card is "active": in the center of its slice
-  // Card exits: half a slice after its turn (slides up/out)
-  const enterStart = Math.max(0, index * sliceSize - sliceSize * 0.3)
-  const enterEnd = index * sliceSize + sliceSize * 0.2
-  const exitStart = (index + 1) * sliceSize - sliceSize * 0.2
-  const exitEnd = Math.min(1, (index + 1) * sliceSize + sliceSize * 0.3)
+  const y = useTransform(progress, [enter, activeStart, activeEnd, exit], [72, 0, 0, -48], {
+    clamp: true,
+  })
+  const opacity = useTransform(progress, [enter, activeStart, activeEnd, exit], [0, 1, 1, 0], {
+    clamp: true,
+  })
+  const scale = useTransform(progress, [enter, activeStart, activeEnd, exit], [0.97, 1, 1, 0.96], {
+    clamp: true,
+  })
+  const rotate = useTransform(progress, [enter, activeStart, activeEnd, exit], [0.8, 0, 0, -1.6], {
+    clamp: true,
+  })
+  const blur = useTransform(progress, [activeEnd, exit], ['blur(0px)', 'blur(2px)'], {
+    clamp: true,
+  })
 
-  // Slide in from below, hold, then slide up and fade
-  const y = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, exitEnd],
-    [72, 0, 0, -52],
-    { clamp: true }
-  )
-  const opacity = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, exitEnd],
-    [0, 1, 1, 0],
-    { clamp: true }
-  )
-  const scale = useTransform(
-    progress,
-    [enterStart, enterEnd, exitStart, exitEnd],
-    [0.96, 1, 1, 0.98],
-    { clamp: true }
-  )
-
-  const tone = cardTones[index % cardTones.length]
+  const p = service.palette
 
   return (
     <motion.article
+      className="absolute inset-0 flex items-center justify-center"
       style={{
-        opacity,
+        zIndex: total - index,
         y,
+        opacity,
         scale,
-        zIndex: index + 1,
-        background: tone.bg,
-        borderColor: tone.border,
+        rotate,
+        filter: blur,
       }}
-      className="absolute inset-0 rounded-2xl border p-6 shadow-[0_16px_48px_rgba(0,0,0,0.10)] md:p-8"
     >
-      {/* Tag */}
-      <span
-        className="inline-block rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest"
-        style={{ background: tone.tag, color: tone.tagText }}
+      <div
+        className="relative h-[680px] w-full overflow-hidden rounded-[30px] border md:h-[520px]"
+        style={{
+          background: p.bg,
+          borderColor: p.border,
+          boxShadow: '0 20px 44px rgba(15,46,109,0.12)',
+          maxWidth: '920px',
+        }}
       >
-        {item.subtitle}
-      </span>
+        <span
+          className="pointer-events-none absolute -right-3 -top-6 select-none font-black leading-none"
+          style={{
+            fontSize: 'clamp(7rem, 16vw, 13rem)',
+            color: p.num,
+            fontFamily: "'Georgia', serif",
+          }}
+        >
+          {service.index}
+        </span>
 
-      <h3
-        className="mt-3 text-xl font-extrabold leading-tight md:text-2xl lg:text-3xl"
-        style={{ color: tone.accent }}
-      >
-        {item.title}
-      </h3>
+        <div className="relative flex h-full flex-col md:flex-row">
+          <div className="flex h-full flex-col justify-between p-7 md:w-[52%] md:p-10">
+            <div className="min-h-0 overflow-y-auto pr-1">
+              <div className="flex items-center gap-3">
+                <span
+                  className="rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em]"
+                  style={{ background: p.tag, color: p.tagText }}
+                >
+                  {service.title}
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                  {service.index} / {String(total).padStart(2, '0')}
+                </span>
+              </div>
 
-      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
-        {item.description}
-      </p>
+              <h3
+                className="mt-4 font-black leading-[1.15]"
+                style={{
+                  color: p.accent,
+                  fontSize: 'clamp(1.6rem, 3vw, 2.35rem)',
+                }}
+              >
+                {service.headline}
+              </h3>
 
-      <ul className="mt-5 grid gap-2 md:grid-cols-2">
-        {item.points.map((point) => (
-          <li key={point} className="flex items-start gap-2 text-sm text-slate-700">
-            <span
-              className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-              style={{ background: tone.dot }}
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-[0.94rem]">
+                {service.description}
+              </p>
+
+              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                {service.points.map((pt) => (
+                  <li key={pt} className="flex items-start gap-2.5 text-[0.82rem] text-slate-700">
+                    <span
+                      className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full"
+                      style={{ background: p.tag }}
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full" style={{ background: p.accent }} />
+                    </span>
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-7 flex items-center gap-4">
+              <button
+                type="button"
+                className="rounded-xl px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
+                style={{ background: p.accent }}
+              >
+                {service.cta}
+              </button>
+              <span className="text-xs font-bold" style={{ color: p.accent, opacity: 0.75 }}>
+                {service.badge}
+              </span>
+            </div>
+          </div>
+
+          <div className="relative h-[320px] overflow-hidden md:h-full md:w-[48%]">
+            <img src={service.img} alt={service.title} className="h-full w-full object-cover" />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background: `linear-gradient(90deg, ${p.bg} 0%, ${p.bg}CC 20%, transparent 50%)`,
+              }}
             />
-            <span>{point}</span>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        type="button"
-        className="mt-7 rounded-lg px-5 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-md"
-        style={{ background: tone.accent }}
-      >
-        {item.cta}
-      </button>
+          </div>
+        </div>
+      </div>
     </motion.article>
   )
 }
 
 export default function Services() {
   const sectionRef = useRef(null)
-
-  // Scroll tracks the entire tall section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end end'],
   })
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    mass: 0.3,
+    stiffness: 90,
+    damping: 28,
+    mass: 0.38,
   })
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-[#0F2E6D] px-4 py-14 md:px-8"
-      // Each card gets ~100vh of scroll real estate
-      style={{ height: `${services.length * 100 + 20}vh` }}
-    >
-      {/* Sticky viewport */}
-      <div className="sticky top-0 mx-auto grid h-screen w-full max-w-6xl items-center gap-8 py-12 md:grid-cols-[0.9fr_1.1fr]">
-        {/* Left panel — static intro */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm md:p-8">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300">
-            Core Services
-          </p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-5xl">
-            Leadership services designed for measurable career growth.
-          </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-sky-200 md:text-base">
-            Scroll to explore each offering. Each card reveals as you move through the section.
-          </p>
-
-          {/* Progress dots */}
-          <div className="mt-8 flex gap-2">
-            {services.map((s, i) => (
-              <span
-                key={s.subtitle}
-                className="h-1.5 w-1.5 rounded-full bg-white/30"
-              />
-            ))}
+    <section ref={sectionRef} className="relative px-4 py-14 md:px-8" style={{ height: `${services.length * 110}vh` }}>
+      <div className="sticky top-0 z-10 flex h-screen flex-col">
+        <div className="flex  justify-center px-2 pt-8 md:px-4">
+          <div className='flex flex-col items-center gap-3 text-center'>
+            <p className="text-[15px] font-black uppercase tracking-[0.28em] text-[#1E63B6]/60">
+              Core Services
+            </p>
+            <h1
+              className="mt-1 font-black text-[#0F2E6D]"
+              style={{
+                fontSize: 'clamp(3.05rem, 2vw, 1.45rem)',
+                fontFamily: "'Georgia', serif",
+              }}
+            >
+              Leadership services for <em className="italic text-[#1E63B6]">measurable growth</em>
+            </h1>
           </div>
         </div>
 
-        {/* Right panel — scrolling cards stack */}
-        <div className="relative h-[520px] md:h-[580px]">
-          {services.map((item, index) => (
-            <ServiceCard
-              key={item.title}
-              item={item}
+        <div className="relative flex-1 px-0 pb-6 pt-4 md:px-4 md:pb-10">
+          {services.map((service, index) => (
+            <StickyCard
+              key={service.index}
+              service={service}
               index={index}
               total={services.length}
               progress={smoothProgress}
             />
           ))}
         </div>
+
+        <motion.div
+          className="absolute bottom-6 left-1/2 -translate-x-1/2"
+          style={{ opacity: useTransform(smoothProgress, [0, 0.12], [1, 0]) }}
+        >
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#0F2E6D]/50">
+            Scroll to explore
+          </span>
+        </motion.div>
       </div>
     </section>
   )

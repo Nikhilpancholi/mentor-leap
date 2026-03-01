@@ -6,6 +6,8 @@ import Nav from './component/nav'
 import Services from './component/services'
 import TrustAndaAuthority from './component/TrustAndaAuthority'
 import RotatingWorthSection from './component/RotatingWorthSection'
+import FAQ from './component/faq'
+import Footer from './component/footer'
 
 function App() {
   useEffect(() => {
@@ -31,11 +33,11 @@ function App() {
     <div className="landing-page">
       <Nav />
       <Hero />
-      <RotatingWorthSection />
+      
       <TrustAndaAuthority />
 
       <Services />
-      <BouncyCardsFeatures />
+      {/* <BouncyCardsFeatures /> */}
 
       <section className="social-proof section-light reveal">
         <div className="container">
@@ -226,14 +228,18 @@ function App() {
         </div>
       </section>
 
-      <section className="final-cta section-dark reveal">
+      {/* <section className="final-cta section-dark reveal">
         <div className="container cta-center">
           <h2>Ready to Take Your Career to the Next Level?</h2>
           <button type="button" className="btn btn-primary btn-large">
             Join Mentorleap Today
           </button>
         </div>
-      </section>
+      </section> */}
+
+      <FAQ />
+      <RotatingWorthSection />
+      <Footer />
     </div>
   )
 }

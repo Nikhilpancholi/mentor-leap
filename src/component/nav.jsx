@@ -2,7 +2,7 @@ const navLinks = ['About', 'View Demo', 'Pricing', 'Login']
 
 export default function Nav() {
   return (
-    <header className="sticky top-0 z-50 px-4 py-3 md:px-8">
+    <header className=" top-0 z-50 px-4 py-3 md:px-8">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border border-white/40 bg-white/55 px-4 py-2 shadow-[0_10px_35px_rgba(15,46,109,0.12)] backdrop-blur-lg md:px-6">
         <a href="#home" className="text-3xl font-extrabold tracking-tight">
           <span className="text-[#0F2E6D]">mentor</span>
