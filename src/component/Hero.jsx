@@ -1,15 +1,37 @@
+import { useEffect, useRef } from 'react'
+import { animate, motion, useInView, useMotionValue, useTransform } from 'framer-motion'
 import clientImage from '../assets/client-img.png'
 
 const stats = [
-  { value: '250+', label: 'Mentors' },
-  { value: '18,000+', label: 'Learners' },
-  { value: '35+', label: 'Countries' },
-  { value: '20+', label: 'Industries' },
+  { value: 250, suffix: '+', label: 'Mentors' },
+  { value: 18000, suffix: '+', label: 'Learners' },
+  { value: 35, suffix: '+', label: 'Countries' },
+  { value: 20, suffix: '+', label: 'Industries' },
 ]
+
+function CountUp({ target, suffix = '' }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-20% 0px -20% 0px' })
+  const count = useMotionValue(0)
+  const rounded = useTransform(count, (latest) => Math.round(latest).toLocaleString('en-IN'))
+
+  useEffect(() => {
+    if (!isInView) return
+    const controls = animate(count, target, { duration: 1.4, ease: 'easeOut' })
+    return () => controls.stop()
+  }, [count, isInView, target])
+
+  return (
+    <span ref={ref}>
+      <motion.span>{rounded}</motion.span>
+      {suffix}
+    </span>
+  )
+}
 
 export default function Hero() {
   return (
-    <section className="bg-[#ffffff] px-4 pb-10 pt-8 md:px-8 md:pb-14 md:pt-10">
+    <section className="bg-[#ffffff] px-4 pb-10 pt-8 md:px-8 md:pb-14 ">
       <div className="mx-auto max-w-6xl">
         <div
           className="relative overflow-hidden rounded-2xl border border-[#1E63B6]/60"
@@ -18,6 +40,7 @@ export default function Hero() {
               'radial-gradient(circle at 50% 22%, rgba(79,195,232,0.77), rgba(15,46,109,1) 54%)',
           }}
         >
+
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%]"
             style={{
@@ -37,23 +60,30 @@ export default function Hero() {
               <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight text-white md:mx-0 md:text-5xl md:leading-[1.06]">
                 Executive Coaching & Leadership Communication for Ambitious Professionals
               </h1>
-              <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#8EDBF5] md:mx-0 md:text-base">
-                Advance your career with 1:1 executive coaching, group leadership programs, corporate training workshops, and premium online communication courses.
-              </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-                <button
-                  type="button"
-                  className="rounded-full border border-[#2E86DE] bg-[#2E86DE] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E63B6]"
-                >
-                  Book A Discovery Call
-                </button>
+
                 <button
                   type="button"
                   className="rounded-full border border-[#4FC3E8] bg-transparent px-6 py-3 text-sm font-bold text-[#4FC3E8] transition hover:bg-[#4FC3E8]/10"
                 >
                   Explore Programs
                 </button>
+                <button
+                  type="button"
+                  className="rounded-full border border-white/55 bg-white/8 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/16"
+                >
+                  Hire as Anchor
+                </button>
+                                <button
+                  type="button"
+                  className="rounded-full border border-[#2E86DE] bg-[#2E86DE] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1E63B6]"
+                >
+                  Book A Discovery Call
+                </button>
               </div>
+              <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[#8EDBF5] md:mx-0 md:text-base">
+                Advance your career with 1:1 executive coaching, group leadership programs, corporate training workshops, and premium online communication courses.
+              </p>
             </div>
 
             <div className="relative mx-auto flex w-full max-w-[460px] items-end justify-center md:mx-0 md:justify-end">
@@ -68,7 +98,7 @@ export default function Hero() {
               <img
                 src={clientImage}
                 alt="Mentorleap client"
-                className="relative z-10 max-h-[460px] w-full object-contain drop-shadow-[0_70px_20px_rgba(0,0,0,1)]"
+                className="relative z-10 max-h-[460px] w-full object-contain drop-shadow-[0_70px_15px_rgba(0,0,0,0.9)]"
               />
             </div>
           </div>
@@ -77,7 +107,9 @@ export default function Hero() {
             <ul className="grid grid-cols-2 gap-y-4 md:grid-cols-4">
               {stats.map((item) => (
                 <li key={item.label} className="text-center">
-                  <p className="text-2xl font-extrabold text-white md:text-3xl">{item.value}</p>
+                  <p className="text-2xl font-extrabold text-white md:text-3xl">
+                    <CountUp target={item.value} suffix={item.suffix} />
+                  </p>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#8EDBF5]">
                     {item.label}
                   </p>

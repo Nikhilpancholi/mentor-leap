@@ -10,8 +10,40 @@ import FAQ from './component/faq'
 import Footer from './component/footer'
 import YtVideos from './component/YtVideos'
 import clientImage2 from './assets/client-img2.png'
+import ExploreMore from './component/ExploreMore'
+import WhatCreatorsDo from './component/WhatCreatorsDo'
+import mentor1 from './assets/mentor1.jpeg'
+import mentor2 from './assets/mentor2.jpeg'
+import mentor3 from './assets/mentor3.jpeg'
 
 function App() {
+  const testimonials = [
+    {
+      quote:
+        'Mentorleap helped me move from confusion to clarity in just a few sessions. I switched into a product role with confidence.',
+      name: 'Priya Sharma',
+      role: 'Product Manager',
+    },
+    {
+      quote:
+        'The cohort format is disciplined and practical. Every week felt like real progress, not passive content consumption.',
+      name: 'Rahul Verma',
+      role: 'Growth Associate',
+    },
+    {
+      quote:
+        'The leadership communication coaching improved how I speak in stakeholder meetings and interviews.',
+      name: 'Ananya Gupta',
+      role: 'Senior Consultant',
+    },
+    {
+      quote:
+        'I started applying the frameworks immediately. The structure and accountability were exactly what I needed.',
+      name: 'Karan Mehta',
+      role: 'Founder',
+    },
+  ]
+
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver(
@@ -37,11 +69,12 @@ function App() {
       <Hero />
       
       <TrustAndaAuthority />
+      <WhatCreatorsDo />
 
       <Services />
       {/* <BouncyCardsFeatures /> */}
 
-      <section className="social-proof section-light reveal">
+      {/* <section className="social-proof section-light reveal">
         <div className="container">
           <ul className="proof-list">
             <li>
@@ -62,38 +95,41 @@ function App() {
             </li>
           </ul>
         </div>
-      </section>
+      </section> */}
 
       <section className="offerings section-light">
         <div className="container reveal">
           <h2>Three Ways to Grow with Mentorleap</h2>
           <div className="offer-grid">
-            <article className="offer-card">
-              <span className="offer-icon">01</span>
-              <h3>Conversations</h3>
-              <p>
+            <article className="offer-card" 
+            style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.01), rgba(255,255,255,1)), url(${mentor1})`, backgroundPosition: 'center', backgroundSize: 'contain' }}>
+              {/* <span className="offer-icon">01</span> */}
+              <h2 className='text-[#181818] pt-38 pl-6 '>Conversations</h2>
+              {/* <p>
                 Book focused 1:1 sessions with operators and leaders for direct career
                 decisions.
-              </p>
-              <a href="#0">Learn More</a>
+              </p> */}
+              {/* <a href="#0">Learn More</a> */}
             </article>
-            <article className="offer-card">
+            <article className="offer-card"
+                        style={{backgroundImage: `url(${mentor2})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
               <span className="offer-icon">02</span>
               <h3>Cohorts</h3>
-              <p>
+              {/* <p>
                 Join guided peer groups with weekly goals, expert reviews, and practical
                 accountability.
-              </p>
-              <a href="#0">Learn More</a>
+              </p> */}
+              {/* <a href="#0">Learn More</a> */}
             </article>
-            <article className="offer-card">
+            <article className="offer-card" 
+            style={{backgroundImage: `url(${mentor3})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
               <span className="offer-icon">03</span>
               <h3>Studio</h3>
-              <p>
+              {/* <p>
                 Access curated career templates, strategy playbooks, and proven growth
                 frameworks.
-              </p>
-              <a href="#0">Learn More</a>
+              </p> */}
+              {/* <a href="#0">Learn More</a> */}
             </article>
           </div>
         </div>
@@ -101,27 +137,34 @@ function App() {
 
       <section className="how-it-works section-tinted">
         <div className="container reveal">
-          <h2>How It Works</h2>
-          <div className="steps-row">
-            <div className="step">
-              <div className="step-num">1</div>
+          <div className="hiw-head">
+            <h2>How It Works</h2>
+            <p>Simple, structured, and outcome-focused from day one.</p>
+          </div>
+          <div className="hiw-stage">
+            <article className="hiw-card" style={{ '--hiw-delay': '80ms' }}>
+              <span className="hiw-index">01</span>
               <h3>Sign Up</h3>
-            </div>
-            <div className="step-line" />
-            <div className="step">
-              <div className="step-num">2</div>
+              <p>Create your profile and share your goals, role, and growth focus.</p>
+            </article>
+            <span className="hiw-connector" style={{ '--hiw-delay': '220ms' }} />
+            <article className="hiw-card" style={{ '--hiw-delay': '320ms' }}>
+              <span className="hiw-index">02</span>
               <h3>Get Matched</h3>
-            </div>
-            <div className="step-line" />
-            <div className="step">
-              <div className="step-num">3</div>
+              <p>Get paired with the right mentor based on your career direction.</p>
+            </article>
+            <span className="hiw-connector" style={{ '--hiw-delay': '460ms' }} />
+            <article className="hiw-card" style={{ '--hiw-delay': '560ms' }}>
+              <span className="hiw-index">03</span>
               <h3>Book Sessions</h3>
-            </div>
-            <div className="step-line" />
-            <div className="step">
-              <div className="step-num">4</div>
+              <p>Schedule focused sessions with practical actions you can execute.</p>
+            </article>
+            <span className="hiw-connector" style={{ '--hiw-delay': '700ms' }} />
+            <article className="hiw-card" style={{ '--hiw-delay': '800ms' }}>
+              <span className="hiw-index">04</span>
               <h3>Build Growth Plan</h3>
-            </div>
+              <p>Convert learnings into a clear roadmap with measurable milestones.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -183,7 +226,7 @@ function App() {
       </section> */}
            <YtVideos />
 
-      <section className="cohort section-dark">
+      {/* <section className="cohort section-dark">
         <div className="container cohort-grid reveal">
           <div className="cohort-copy">
             <h2>Structured 4-6 Week Micro Cohorts for Serious Career Outcomes</h2>
@@ -213,28 +256,22 @@ function App() {
             </div>
           </article>
         </div>
-      </section>
+      </section> */}
+      <ExploreMore />
 
       <section className="testimonials section-light reveal">
         <div className="container">
           <h2>What Learners Say</h2>
-          <div className="testimonial-slider">
-            <article className="testimonial-card active">
-              <p>
-                Mentorleap helped me move from confusion to clarity in just a few sessions. I
-                switched into a product role with confidence.
-              </p>
-              <h3>Priya Sharma</h3>
-              <span>Product Manager</span>
-            </article>
-            <article className="testimonial-card">
-              <p>
-                The cohort format is disciplined and practical. Every week felt like real
-                progress, not passive content consumption.
-              </p>
-              <h3>Rahul Verma</h3>
-              <span>Growth Associate</span>
-            </article>
+          <div className="testimonial-marquee-wrap">
+            <div className="testimonial-marquee-track">
+              {[...testimonials, ...testimonials].map((item, idx) => (
+                <article key={`${item.name}-${idx}`} className="testimonial-card">
+                  <p>{item.quote}</p>
+                  <h3>{item.name}</h3>
+                  <span>{item.role}</span>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -249,7 +286,9 @@ function App() {
         </div>
       </section> */}
 
+
       <FAQ />
+
       <RotatingWorthSection />
       <Footer />
     </div>
@@ -257,5 +296,3 @@ function App() {
 }
 
 export default App
-
-

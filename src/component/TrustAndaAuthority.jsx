@@ -1,3 +1,5 @@
+import clientImage2 from '../assets/section2-bg.jpeg'
+
 const audience = [
   'CXOs',
   'Startup founders',
@@ -11,18 +13,26 @@ export default function TrustAndaAuthority() {
   return (
     <section className="bg-white px-4 py-16 md:px-8 md:py-20">
       <div className="mx-auto grid w-full max-w-6xl gap-8 md:grid-cols-[1.15fr_0.85fr]">
-        <article className="rounded-2xl border border-[#1E63B6]/20 bg-[#F8FBFF] p-7 shadow-[0_14px_34px_rgba(15,46,109,0.08)] md:p-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#1E63B6]">
+        <article className="relative overflow-hidden rounded-2xl border border-[#1E63B6]/20 p-7 shadow-[0_14px_34px_rgba(15,46,109,0.08)] md:p-8">
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage: `linear-gradient(190deg, rgba(255,255,255,0.01), rgba(255,255,255,0.9)), url(${clientImage2})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'left',
+            }}
+          />
+          <p className="relative text-xs font-extrabold uppercase tracking-[0.2em] text-[#205eaa]">
             Section 2 - Trust & Authority
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight text-[#0F2E6D] md:text-4xl">
-            India&apos;s Trusted Executive Communication & Leadership Coaching Platform
+          <h2 className="relative mt-4 text-3xl font-extrabold leading-tight text-[#0F2E6D] md:text-4xl">
+            India&apos;s Trusted Executive Communication<br/> & Leadership<br/> Coaching Platform
           </h2>
-          <p className="mt-5 text-sm leading-relaxed text-[#1E63B6] md:text-base">
+          <p className="relative mt-5 text-sm leading-relaxed text-[#1E63B6] md:text-base">
             MentorLeap is a premium executive coaching and leadership development platform
             founded by award-winning journalist and communication expert Mridu Bhandari.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#1E63B6] md:text-base">
+          <p className="relative mt-4 text-sm leading-relaxed text-[#1E63B6] md:text-base">
             Our programs combine real-world media expertise with structured leadership
             frameworks to deliver measurable transformation.
           </p>

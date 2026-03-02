@@ -135,20 +135,21 @@ function getRange(index, total) {
 
 function StickyCard({ service, index, total, progress }) {
   const { enter, activeStart, activeEnd, exit } = getRange(index, total)
+  const stackedY = -26 - index * 3
 
-  const y = useTransform(progress, [enter, activeStart, activeEnd, exit], [72, 0, 0, -48], {
+  const y = useTransform(progress, [enter, activeStart, activeEnd, exit, 1], [72, 0, 0, stackedY, stackedY], {
     clamp: true,
   })
-  const opacity = useTransform(progress, [enter, activeStart, activeEnd, exit], [0, 1, 1, 0], {
+  const opacity = useTransform(progress, [enter, activeStart, activeEnd, exit, 1], [0, 1, 1, 0.34, 0.34], {
     clamp: true,
   })
-  const scale = useTransform(progress, [enter, activeStart, activeEnd, exit], [0.97, 1, 1, 0.96], {
+  const scale = useTransform(progress, [enter, activeStart, activeEnd, exit, 1], [0.97, 1, 1, 0.97, 0.97], {
     clamp: true,
   })
-  const rotate = useTransform(progress, [enter, activeStart, activeEnd, exit], [0.8, 0, 0, -1.6], {
+  const rotate = useTransform(progress, [enter, activeStart, activeEnd, exit, 1], [0.8, 0, 0, -0.6, -0.6], {
     clamp: true,
   })
-  const blur = useTransform(progress, [activeEnd, exit], ['blur(0px)', 'blur(2px)'], {
+  const blur = useTransform(progress, [activeEnd, exit], ['blur(0px)', 'blur(1.2px)'], {
     clamp: true,
   })
 
@@ -158,7 +159,7 @@ function StickyCard({ service, index, total, progress }) {
     <motion.article
       className="absolute inset-0 flex items-center justify-center"
       style={{
-        zIndex: total - index,
+        zIndex: index + 1,
         y,
         opacity,
         scale,
