@@ -8,6 +8,8 @@ import TrustAndaAuthority from './component/TrustAndaAuthority'
 import RotatingWorthSection from './component/RotatingWorthSection'
 import FAQ from './component/faq'
 import Footer from './component/footer'
+import YtVideos from './component/YtVideos'
+import clientImage2 from './assets/client-img2.png'
 
 function App() {
   useEffect(() => {
@@ -124,7 +126,7 @@ function App() {
         </div>
       </section>
 
-      <section className="mentors section-light">
+      {/* <section className="mentors section-light">
         <div className="container reveal">
           <h2>Featured Mentors</h2>
           <div className="mentor-grid">
@@ -178,7 +180,8 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+           <YtVideos />
 
       <section className="cohort section-dark">
         <div className="container cohort-grid reveal">
@@ -190,16 +193,24 @@ function App() {
             </p>
           </div>
           <article className="cohort-card">
-            <span className="badge">Duration: 6 Weeks</span>
-            <h3>Career Acceleration Cohort</h3>
-            <ul>
-              <li>Batch Size: 24 learners</li>
-              <li>Skill Focus: Product, Growth, Leadership</li>
-              <li>Weekly live mentor office hours</li>
-            </ul>
-            <button type="button" className="btn btn-primary">
-              Enroll Now
-            </button>
+            <div className="cohort-card-layout">
+              <div>
+                <span className="badge">Duration: 6 Weeks</span>
+                <h3>Career Acceleration Cohort</h3>
+                <ul>
+                  <li>Batch Size: 24 learners</li>
+                  <li>Skill Focus: Product, Growth, Leadership</li>
+                  <li>Weekly live mentor office hours</li>
+                </ul>
+                <button type="button" className="btn btn-primary">
+                  Enroll Now
+                </button>
+              </div>
+              <div className="cohort-image-wrap" aria-hidden="true">
+                <div className="cohort-image-glow" />
+                <img className="cohort-image" src={clientImage2} alt="" loading="lazy" />
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -227,6 +238,7 @@ function App() {
           </div>
         </div>
       </section>
+ 
 
       {/* <section className="final-cta section-dark reveal">
         <div className="container cta-center">
@@ -245,3 +257,5 @@ function App() {
 }
 
 export default App
+
+

@@ -31,7 +31,7 @@ export default function Hero() {
 
           <div className="grid items-center gap-8 px-6 pb-12 pt-12 md:grid-cols-[1.05fr_0.95fr] md:px-14 md:pb-14 md:pt-16">
             <div className="text-center md:text-left">
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#8EDBF5]">
+              <p className="mb-4 text-2xl  font-['Allura']  tracking-[0.2em] text-[#8EDBF5]">
                 Mentorleap
               </p>
               <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight text-white md:mx-0 md:text-5xl md:leading-[1.06]">
@@ -68,7 +68,7 @@ export default function Hero() {
               <img
                 src={clientImage}
                 alt="Mentorleap client"
-                className="relative z-10 max-h-[460px] w-full object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+                className="relative z-10 max-h-[460px] w-full object-contain drop-shadow-[0_70px_20px_rgba(0,0,0,1)]"
               />
             </div>
           </div>
