@@ -1,5 +1,11 @@
 import { useRef } from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+// import servies images
+import service1 from '../assets/service1.jpeg'
+import service2 from '../assets/service2.jpeg'
+import service3 from '../assets/service3.jpeg'
+import service4 from '../assets/service4.jpeg'
+import service5 from '../assets/service5.jpeg'
 
 const services = [
   {
@@ -15,7 +21,7 @@ const services = [
       'Personal brand positioning',
     ],
     cta: 'Start Coaching',
-    img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85&fit=crop',
+    img: service1,
     badge: '3x leadership impact',
     palette: {
       bg: '#E8F0FF',
@@ -39,7 +45,7 @@ const services = [
       'Media readiness training',
     ],
     cta: 'View Upcoming Events',
-    img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85&fit=crop',
+    img: service2,
     badge: 'High-impact cohort format',
     palette: {
       bg: '#E8F9F2',
@@ -63,7 +69,7 @@ const services = [
       'Digital workbooks & templates',
     ],
     cta: 'Browse Courses',
-    img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=85&fit=crop',
+    img: service3,
     badge: 'Lifetime access',
     palette: {
       bg: '#F2EEFF',
@@ -87,7 +93,7 @@ const services = [
       'Communication micro-lessons',
     ],
     cta: 'Visit Studio',
-    img: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=85&fit=crop',
+    img: service4,
     badge: 'Learn anywhere',
     palette: {
       bg: '#FFF5E8',
@@ -111,7 +117,7 @@ const services = [
       'Awards ceremonies',
     ],
     cta: 'Submit Event Inquiry',
-    img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=85&fit=crop',
+    img: service5,
     badge: '20+ years expertise',
     palette: {
       bg: '#FFF0F4',

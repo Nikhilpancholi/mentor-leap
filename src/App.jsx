@@ -1,20 +1,19 @@
 import { useEffect } from 'react'
 import './App.css'
-import { BouncyCardsFeatures } from './component/BouncyCardsFeatures'
 import Hero from './component/Hero'
-import Nav from './component/nav'
+import MentorAi from './component/MentorAi'
 import Services from './component/services'
 import TrustAndaAuthority from './component/TrustAndaAuthority'
 import RotatingWorthSection from './component/RotatingWorthSection'
+import ThreeWaystoGrowWithMentorleap from './component/ThreeWaystoGrowWithMentorleap'
 import FAQ from './component/faq'
 import Footer from './component/footer'
 import YtVideos from './component/YtVideos'
-import clientImage2 from './assets/client-img2.png'
 import ExploreMore from './component/ExploreMore'
 import WhatCreatorsDo from './component/WhatCreatorsDo'
-import mentor1 from './assets/mentor1.jpeg'
-import mentor2 from './assets/mentor2.jpeg'
-import mentor3 from './assets/mentor3.jpeg'
+import FloatingAiWidget from './component/FloatingAiWidget'
+import Banner from './component/Banner'
+import CoursesSection from './component/courses'
 
 function App() {
   const testimonials = [
@@ -65,13 +64,16 @@ function App() {
 
   return (
     <div className="landing-page">
-      <Nav />
+      <Banner />
       <Hero />
       
       <TrustAndaAuthority />
       <WhatCreatorsDo />
+      <CoursesSection />
 
       <Services />
+      <MentorAi />
+      <ThreeWaystoGrowWithMentorleap />
       {/* <BouncyCardsFeatures /> */}
 
       {/* <section className="social-proof section-light reveal">
@@ -97,43 +99,6 @@ function App() {
         </div>
       </section> */}
 
-      <section className="offerings section-light">
-        <div className="container reveal">
-          <h2>Three Ways to Grow with Mentorleap</h2>
-          <div className="offer-grid">
-            <article className="offer-card" 
-            style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.01), rgba(255,255,255,1)), url(${mentor1})`, backgroundPosition: 'center', backgroundSize: 'contain' }}>
-              {/* <span className="offer-icon">01</span> */}
-              <h2 className='text-[#181818] pt-38 pl-6 '>Conversations</h2>
-              {/* <p>
-                Book focused 1:1 sessions with operators and leaders for direct career
-                decisions.
-              </p> */}
-              {/* <a href="#0">Learn More</a> */}
-            </article>
-            <article className="offer-card"
-                        style={{backgroundImage: `url(${mentor2})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-              <span className="offer-icon">02</span>
-              <h3>Cohorts</h3>
-              {/* <p>
-                Join guided peer groups with weekly goals, expert reviews, and practical
-                accountability.
-              </p> */}
-              {/* <a href="#0">Learn More</a> */}
-            </article>
-            <article className="offer-card" 
-            style={{backgroundImage: `url(${mentor3})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-              <span className="offer-icon">03</span>
-              <h3>Studio</h3>
-              {/* <p>
-                Access curated career templates, strategy playbooks, and proven growth
-                frameworks.
-              </p> */}
-              {/* <a href="#0">Learn More</a> */}
-            </article>
-          </div>
-        </div>
-      </section>
 
       <section className="how-it-works section-tinted">
         <div className="container reveal">
@@ -291,8 +256,10 @@ function App() {
 
       <RotatingWorthSection />
       <Footer />
+      <FloatingAiWidget />
     </div>
   )
 }
 
 export default App
+
