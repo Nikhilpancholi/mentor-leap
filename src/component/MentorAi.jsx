@@ -88,7 +88,7 @@ export default function MentorAi() {
                 className="mt-4 text-3xl font-extrabold leading-tight text-white md:text-4xl"
                 variants={itemVariants}
               >
-                Meet Mentor AI - Your 24x7 Growth Partner
+                Meet Mree AI - Your 24x7 Growth Partner
               </MotionItem>
               <MotionItem className="mt-4 text-base font-semibold text-[#b8d8ff]" variants={itemVariants}>
                 Mentor AI is not a generic chatbot.
